@@ -1,0 +1,26 @@
+import bs4
+import requests
+res = requests.get('URL')   // sending requets to the webpage and storing that request object 
+type(res)
+
+res.text //object
+// print out all the text from that page
+
+
+soup = bs4.BeautifulSoup(res.text,'lxml')      //converting it into beautiful soup object
+type(soup)
+
+hi = soup.select('title')
+hi
+hi[0].getText()
+
+
+for i in soup.select('.classname'):
+	print(i.text) 
+
+
+
+
+
+
+
